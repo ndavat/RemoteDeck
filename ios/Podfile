@@ -1,0 +1,32 @@
+# CocoaPods Podfile for the 'roku_remote' project.
+#
+# For more information about Podfiles, see https://guides.cocoapods.org/syntax/podfile.html.
+
+# platform :ios, '11.0'
+
+# You may need to change the 'Runner' project name to match your project's name.
+#
+# project 'Runner', {
+#   'Debug' => :debug,
+#   'Profile' => :release,
+#   'Release' => :release,
+# }
+
+# Flutter Pods
+#
+# This must be defined before any other Pods.
+flutter_application_path = '..'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
