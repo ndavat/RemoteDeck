@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_haptic_feedback/flutter_haptic_feedback.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:roku_remote/features/remote_control/presentation/riverpod/providers.dart';
 
@@ -13,7 +13,7 @@ class RemoteScreen extends ConsumerWidget {
       // We don't need to handle the result here for simple key presses,
       // but you could add error handling.
       ref.read(sendKeypressProvider)(key);
-      FlutterHapticFeedback.mediumImpact();
+      HapticFeedback.mediumImpact();
     }
 
     return Scaffold(
