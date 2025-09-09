@@ -21,7 +21,7 @@ dependencies:
   # UI/UX
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.3.1
-  flutter_haptic_feedback: ^0.4.2
+  flutter_haptic_feedback: ^1.0.1
 
 dev_dependencies:
   flutter_test:
